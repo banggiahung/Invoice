@@ -8,7 +8,9 @@
 
         </div>
         <div class="d-flex col justify-content-between align-items-center">
-            <span class="price h-50">{{ invoice.invoiceTotal }}đ</span>
+            <v-num #="{ number }" :value="invoice.invoiceTotal">
+                <span class="price h-50">{{ number }}đ</span>
+            </v-num>
             <div class="statusButton d-flex "
                 :class="{ paid: invoice.invoicePaid, draft: invoice.invoiceDraft, pending: invoice.invoicePending }">
                 <span class="" v-if="invoice.invoicePaid">Đã thanh toán</span>
@@ -24,9 +26,14 @@
 </template>
 
 <script>
+import VNum from "v3-num";
+
 export default {
     name: 'Invoices',
-    props: ['invoice']
+    props: ['invoice'],
+    components: {
+        VNum
+    },
 }
 </script>
 
