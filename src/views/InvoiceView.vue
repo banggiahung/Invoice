@@ -75,7 +75,9 @@
           <div v-for="(item, index) in currentInvoice.invoiceItemList" :key="index" class="item d-flex">
             <p>{{ item.itemName }}</p>
             <p>{{ item.qty }}</p>
-            <p>{{ item.price }} vnđ</p>
+             <v-num #="{ number }" :value="item.price">
+              <p>{{ number }} vnđ</p>
+            </v-num>
             <v-num #="{ number }" :value="item.total">
               <p>{{ number }} vnđ</p>
             </v-num>
