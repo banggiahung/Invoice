@@ -103,9 +103,9 @@
                         <th class="total">Tổng</th>
                     </tr>
                     <tr class="" v-for="(item, index) in invoiceItemList" :key="index">
-                        <td class="mb-3"> <input type="text" v-model="item.itemName"></td>
-                        <td class="mb-3"><input type="text" v-model="item.qty"></td>
-                        <td class="mb-3"><input type="text" v-model="item.price"></td>
+                        <td class="mb-3"> <input required type="text" v-model="item.itemName"></td>
+                        <td class="mb-3"><input required type="text" v-model="item.qty"></td>
+                        <td class="mb-3"><input required type="text" v-model="item.price"></td>
                         <td class="cl-white">{{ (item.total = item.qty * item.price) }}đ
                             <i @click="deleteInvoiceItems(item.id)" class="fa-solid fa-trash"></i>
 
